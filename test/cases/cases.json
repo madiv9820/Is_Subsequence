@@ -3,7 +3,7 @@
     "title": "Basic Valid Subsequence ✅",
     "input": {
       "s": "abc",
-      "p": "ahbgdc"
+      "t": "ahbgdc"
     },
     "output": true,
     "description": "All characters of s appear in t in correct order ✔️"
@@ -12,7 +12,7 @@
     "title": "Character Missing ❌",
     "input": {
       "s": "axc",
-      "p": "ahbgdc"
+      "t": "ahbgdc"
     },
     "output": false,
     "description": "Character 'x' is not present in t 🚫"
@@ -21,7 +21,7 @@
     "title": "Empty s String 🟢",
     "input": {
       "s": "",
-      "p": "ahbgdc"
+      "t": "ahbgdc"
     },
     "output": true,
     "description": "Empty string is always a subsequence ✨"
@@ -30,7 +30,7 @@
     "title": "Empty t String 🔴",
     "input": {
       "s": "a",
-      "p": ""
+      "t": ""
     },
     "output": false,
     "description": "Non-empty s cannot be formed from empty t ⚠️"
@@ -39,7 +39,7 @@
     "title": "Both Strings Empty ⚪",
     "input": {
       "s": "",
-      "p": ""
+      "t": ""
     },
     "output": true,
     "description": "Empty string is subsequence of empty string ✔️"
@@ -48,7 +48,7 @@
     "title": "Same Strings Match 🎯",
     "input": {
       "s": "abc",
-      "p": "abc"
+      "t": "abc"
     },
     "output": true,
     "description": "Both strings are identical 🔁"
@@ -57,7 +57,7 @@
     "title": "Order Mismatch 🔄❌",
     "input": {
       "s": "aec",
-      "p": "abcde"
+      "t": "abcde"
     },
     "output": false,
     "description": "Characters exist but order is incorrect 🚫"
@@ -66,7 +66,7 @@
     "title": "Single Character Match 🔹",
     "input": {
       "s": "a",
-      "p": "a"
+      "t": "a"
     },
     "output": true,
     "description": "Single character matches directly ✔️"
@@ -75,7 +75,7 @@
     "title": "Repeated Characters in t 🔁",
     "input": {
       "s": "aaa",
-      "p": "aaabaaa"
+      "t": "aaabaaa"
     },
     "output": true,
     "description": "Multiple occurrences allow valid matching 🔄"
@@ -84,7 +84,7 @@
     "title": "Insufficient Repetition ❗",
     "input": {
       "s": "aaaa",
-      "p": "aaabaaa"
+      "t": "aaabaaa"
     },
     "output": false,
     "description": "Not enough 'a' characters in correct sequence ⚠️"
