@@ -35,14 +35,14 @@ class test_pySolution(unittest.TestCase):
             # 🏷️ Extract test case details
             testname: str = testcases['title']
             s: str = testcases['input']['s']
-            p: str = testcases['input']['p']
+            t: str = testcases['input']['t']
             expectedOutput: bool = testcases['output']
 
             # 🔍 Run each test as a subTest for better isolation
             with self.subTest(testname):
 
                 # ⚙️ Call the solution method
-                actualOutput: bool = self.__solution.py_isSubsequence(s=s, p=p)
+                actualOutput: bool = self.__solution.py_isSubsequence(s=s, t=t)
 
                 # ✅ Assert the result matches expected output
                 self.assertEqual(actualOutput, expectedOutput)
