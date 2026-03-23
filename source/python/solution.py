@@ -1,3 +1,3 @@
 class pySolution:
-    def py_isSubsequence(self, s: str, p: str) -> bool:
+    def py_isSubsequence(self, s: str, t: str) -> bool:
         return False
