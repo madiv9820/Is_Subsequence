@@ -37,4 +37,20 @@ In this case, the solution should be optimized to handle repeated queries effici
 - A subsequence preserves **relative order**
 - Characters do not need to be contiguous
 - Efficient handling is required when processing multiple queries against the same string **`t`**
+
+## Approaches 🚴🏽‍♂️
+| **🚀 Feature / Aspect**     | [**🔁 Recursive Two-Pointer**](https://github.com/madiv9820/Is_Subsequence/tree/Approach_01-Recursion)               | [**⚡ Iterative Two-Pointer**](https://github.com/madiv9820/Is_Subsequence/tree/Approach_02-Iteration) |
+| ----------------------- | -------------------------------------- | --------------------------------- |
+| 🧠 Core Idea            | Match or skip using recursion          | Traverse `t` once and match `s`   |
+| 🎯 Approach Style       | Top-down recursion                     | Linear scan (loop-based)          |
+| 🔹 Pointer Handling     | Indices passed recursively             | Indices managed in loop           |
+| ⏱️ Time Complexity      | `O(n)`                                 | `O(n)`                            |
+| 🧠 Space Complexity     | `O(n)` (recursion stack)               | `O(1)` (constant space)           |
+| 🚀 Performance          | Slightly slower (function calls)       | Faster (no overhead)              |
+| 📦 Memory Usage         | Higher                                 | Minimal                           |
+| 🧼 Readability          | More intuitive (step-by-step thinking) | Cleaner & concise                 |
+| 🎓 Learning Value       | Great for understanding recursion      | Best for practical use            |
+| 💼 Interview Preference | 👍 Good (if asked recursion)           | ⭐ Most preferred solution         |
+| ⚠️ Risk                 | Stack overflow (large input)           | No such risk                      |
+
 ---
