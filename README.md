@@ -1,40 +1,59 @@
-# [🧵 Is Subsequence](https://leetcode.com/problems/is-subsequence/?envType=study-plan-v2&envId=top-interview-150)
-Given two strings **`s`** and **`t`**, the objective is to determine whether `**s**` is a **subsequence** of **`t`**.
+# Is Subsequence - 🚀 Iterative Two-Pointer Approach
+### 🧠 Intuition
+We want to check if string **`s`** is a **subsequence** of string **`t`**.
 
-A subsequence is formed by deleting zero or more characters from the original string **without altering the relative order** of the remaining characters.
+👉 Think of it like this:
 
-### 📌 Key Idea
-The problem focuses on verifying whether all characters of **`s`** can be found in **`t`** **in the same order**, though not necessarily contiguously.
+    “Can we build s by scanning through t from left to right?”
 
-### 🧠 Examples
-#### Example 1
+We don’t need to match every character — we can **skip characters in `t`**.
+
+### 🎯 Core Idea
+We use **two pointers**:
+- 🔹 **`sIndex`** → tracks position in **`s`**
+- 🔹 **`tIndex`** → traverses through **`t`**
+
+At each step:
+- ✅ If characters match → move **`sIndex`**
+- ⏭️ Always move forward in **`t`**
+
+### 🔁 How It Works
 ```
-Input:  s = "abc", t = "ahbgdc"
-Output: true
+s = "abc"
+t = "ahbgdc"
+
+t: a h b g d c
+   ↑   ↑     ↑
+   a   b     c  → matched in order ✔️
 ```
-**Explanation:** <br>
-Characters **`'a'`**, **`'b'`**, and **`'c'`** appear in **`t`** in the correct order.
+We only move forward and match characters in order.
 
-#### Example 2
-```
-Input:  s = "axc", t = "ahbgdc"
-Output: false
-```
-**Explanation:** <br>
-While **`'a'`** appears in **`t`**, the character **`'x'`** does not, so **`s`** cannot be formed.
+### 📌 Algorithm Steps
+1. Initialize **`sIndex = 0`**
+2. Traverse through string **`t`**
+3. If **`s[sIndex] == t[tIndex]`** → increment **`sIndex`**
+4. If **`sIndex == len(s)`** → 🎉 return **`true`**
+5. End of loop → check if all characters matched
 
-### 🔒 Constraints
-- **`0 ≤ s.length ≤ 100`**
-- **`0 ≤ t.length ≤ 10⁴`**
-- **`s`** and **`t`** consist only of lowercase English letters
+### ⏱️ Complexity Analysis
+| Type                | Complexity |
+| ------------------- | ---------- |
+| 🕒 Time Complexity  | **`O(n)`**     |
+| 🧠 Space Complexity | **`O(1)`**     |
 
-### 🚀 Follow-up
-Suppose there are multiple incoming strings **`s₁, s₂, ..., sₖ`** where **`k ≥ 10⁹`**, and each needs to be checked against the same string **`t`**.
+### ⚖️ Why This is Optimal?
+#### ✅ Pros
+- 🚀 Linear time (single pass)
+- 📦 Constant space (no recursion stack)
+- 🧼 Clean and easy to understand
+- 🎯 Most expected solution in interviews
 
-In this case, the solution should be optimized to handle repeated queries efficiently by minimizing redundant computation.
+#### ❌ Cons
+- Slightly less intuitive than recursion for beginners
 
-### 💭 Summary
-- A subsequence preserves **relative order**
-- Characters do not need to be contiguous
-- Efficient handling is required when processing multiple queries against the same string **`t`**
+### 💡 When to Use This Approach?
+- 🔥 In interviews (most preferred solution)
+- ⚡ When optimizing space (**`O(1)`**)
+- 📚 When dealing with sequence matching problems
+
 ---
