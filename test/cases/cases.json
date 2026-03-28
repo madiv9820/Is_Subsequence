@@ -86,7 +86,7 @@
       "s": "aaaa",
       "t": "aaabaaa"
     },
-    "output": false,
+    "output": true,
     "description": "Not enough 'a' characters in correct sequence ⚠️"
   }
 ]
