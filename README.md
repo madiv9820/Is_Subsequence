@@ -1,40 +1,59 @@
-# [🧵 Is Subsequence](https://leetcode.com/problems/is-subsequence/?envType=study-plan-v2&envId=top-interview-150)
-Given two strings **`s`** and **`t`**, the objective is to determine whether `**s**` is a **subsequence** of **`t`**.
+# 🧵 Is Subsequence - Recursive Two-Pointer Approach
+### 🚀 Intuition
+Imagine you're trying to f**ind string `s` inside string `t`** — but you're allowed to skip characters in **`t`**.
 
-A subsequence is formed by deleting zero or more characters from the original string **without altering the relative order** of the remaining characters.
+We simulate this using **two pointers recursively**:
+- 🔹 One pointer for **`s`** → **`sIndex`**
+- 🔹 One pointer for **`t`** → **`tIndex`**
 
-### 📌 Key Idea
-The problem focuses on verifying whether all characters of **`s`** can be found in **`t`** **in the same order**, though not necessarily contiguously.
+At every step:
+- ✅ If characters match → move both pointers
+- ⏭️ If not → skip character in **`t`** and move ahead
 
-### 🧠 Examples
-#### Example 1
+### 🔁 Recursive Strategy
+We define a recursive function:
+- If we've matched all characters of **`s`** → **🎉 return true**
+- If **`t`** is exhausted before **`s`** → **❌ return false**
+
+### 🎯 Key Idea
+    “Try to match current character. If not possible, skip and keep searching.”
+
+This naturally fits recursion because:
+- Each decision reduces the problem size
+- We explore the sequence step-by-step
+
+### 📌 Dry Run
 ```
-Input:  s = "abc", t = "ahbgdc"
-Output: true
+s = "abc"
+t = "ahbgdc"
+
+a == a ✅ → move both
+b != h ❌ → skip h
+b == b ✅ → move both
+c != g ❌ → skip g
+c == c ✅ → move both
+
+✔️ Subsequence found!
 ```
-**Explanation:** <br>
-Characters **`'a'`**, **`'b'`**, and **`'c'`** appear in **`t`** in the correct order.
 
-#### Example 2
-```
-Input:  s = "axc", t = "ahbgdc"
-Output: false
-```
-**Explanation:** <br>
-While **`'a'`** appears in **`t`**, the character **`'x'`** does not, so **`s`** cannot be formed.
+### ⏱️ Complexity Analysis
+| Type                | Complexity               |
+| ------------------- | ------------------------ |
+| 🕒 Time Complexity  | **`O(n)`**                   |
+| 🧠 Space Complexity | **`O(n)`** (recursion stack) |
 
-### 🔒 Constraints
-- **`0 ≤ s.length ≤ 100`**
-- **`0 ≤ t.length ≤ 10⁴`**
-- **`s`** and **`t`** consist only of lowercase English letters
+### ⚖️ Pros & Cons
+#### ✅ Pros
+- Clean and intuitive logic 🧼
+- Easy to understand recursion flow 🔁
+- Direct mapping to problem statement 🎯
+#### ❌ Cons
+- Uses extra space due to recursion stack 📦
+- Not optimal compared to iterative approach (which is **`O(1)`** space)
 
-### 🚀 Follow-up
-Suppose there are multiple incoming strings **`s₁, s₂, ..., sₖ`** where **`k ≥ 10⁹`**, and each needs to be checked against the same string **`t`**.
+### 💡 When to Use This Approach?
+- When learning recursion fundamentals 📚
+- When problem involves **order-preserving matching**
+- When clarity is preferred over optimization
 
-In this case, the solution should be optimized to handle repeated queries efficiently by minimizing redundant computation.
-
-### 💭 Summary
-- A subsequence preserves **relative order**
-- Characters do not need to be contiguous
-- Efficient handling is required when processing multiple queries against the same string **`t`**
 ---
